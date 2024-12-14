@@ -20,7 +20,7 @@ export const DrinkIngredients = ({
         </Table.Thead>
         <Table.Tbody>
           {ingredients.map(({ name, measure }) => (
-            <Table.Tr key={name}>
+            <Table.Tr key={`${name}-${measure}`}>
               <Table.Td>{name}</Table.Td>
               <Table.Td>{measure}</Table.Td>
             </Table.Tr>

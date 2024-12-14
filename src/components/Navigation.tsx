@@ -1,17 +1,16 @@
 import { ColorSchemeToggle } from "#src/components/ColorSchemeToggle"
 import { DrinkCodes } from "#src/constants/config"
 import { Link } from "@tanstack/react-router"
+import { NavLink } from "@mantine/core"
 
 export const Navigation = ({ close }: { close: () => void }) => {
   return (
     <>
       {Object.values(DrinkCodes).map(code => (
-        <Link
+        <NavLink
+          component={Link}
           key={code}
           to={`/${code}`}
-          activeProps={{
-            style: { fontWeight: "bold" },
-          }}
           style={{
             textDecoration: "none",
             textTransform: "capitalize",
@@ -19,9 +18,10 @@ export const Navigation = ({ close }: { close: () => void }) => {
           }}
           activeOptions={{ exact: true }}
           onClick={close}
-        >
-          {code}
-        </Link>
+          label={code}
+          preload="intent"
+          leftSection={<></>}
+        ></NavLink>
       ))}
       <div style={{ height: "100%" }} />
       <ColorSchemeToggle />

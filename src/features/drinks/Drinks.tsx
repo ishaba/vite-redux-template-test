@@ -29,7 +29,7 @@ export const Drinks = ({ drinkCode }: { drinkCode: DrinkCodes }) => {
     return (
       <Stack>
         {data.map(drink => (
-          <DrinkCard {...drink} />
+          <DrinkCard key={drink.id} {...drink} />
         ))}
       </Stack>
     )

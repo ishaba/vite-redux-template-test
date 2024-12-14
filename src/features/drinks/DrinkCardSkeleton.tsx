@@ -1,15 +1,12 @@
 import { Flex, Paper, Skeleton, Space, Stack } from "@mantine/core"
 
-export const DrinkCardSkeleton = ({ key }: { key: number }) => {
+import css from "./DrinkCard.module.css"
+
+export const DrinkCardSkeleton = () => {
   return (
-    <Paper
-      shadow="xs"
-      p="xl"
-      key={key}
-      style={{ width: "800px", margin: "0 auto" }}
-    >
-      <Flex direction={{ base: "column", md: "row" }}>
-        <Stack>
+    <Paper shadow="xs" p="xl" style={{ width: "800px", margin: "0 auto" }}>
+      <Flex direction={{ base: "column-reverse", md: "row" }}>
+        <Stack className={css.content}>
           <Skeleton height={42} w={100} />
           <Stack>
             <Skeleton height={20} w={120} radius="xl" />
@@ -24,7 +21,9 @@ export const DrinkCardSkeleton = ({ key }: { key: number }) => {
           <Skeleton height={12} w={100} />
         </Stack>
         <Space w="sm" h="sm" />
-        <Skeleton height={360} w="50%" radius="md" />
+        <div className={css.image}>
+          <Skeleton w="100%" radius="md" style={{ aspectRatio: "1/1" }} />
+        </div>
       </Flex>
     </Paper>
   )
