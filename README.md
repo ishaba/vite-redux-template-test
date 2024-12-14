@@ -13,13 +13,13 @@ Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Test
 
 ### Исходные данные:
 
-[-] Всю необходимую информацию запрашиваем по GET-запросу: https://www.thecocktaildb.com/api/json/v1/1/search.php?s=<cocktail_code>
+[✓] Всю необходимую информацию запрашиваем по GET-запросу: https://www.thecocktaildb.com/api/json/v1/1/search.php?s=<cocktail_code>
 
-[-] Доступные cocktail_code: margarita, mojito, a1, kir
+[✓] Доступные cocktail_code: margarita, mojito, a1, kir
 
 ### Функциональные требования:
 
-[-] Использовать менеджер состояния для сохранения данных и исключения дублирующих запросов
+[✓] Использовать менеджер состояния для сохранения данных и исключения дублирующих запросов
 
 [-] Список кодов (cocktail_code) использовать для названия пунктов меню и формирования url-страниц
 
@@ -39,17 +39,17 @@ Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Test
 
 ### Требования по стеку на выбор:
 
-[-] typescript
+[✓] typescript
 
-[-] vue 2/3 + vuex/pinia, react + redux/mobx
+[✓] vue 2/3 + vuex/pinia, react + redux/mobx
 
-[-] webpack, vite
+[✓] webpack, vite
 
-[-] eslint
+[✓] eslint
 
-[-] html 5, css 3
+[✓] html 5, css 3
 
-[-] scss/sass, stylus, less, postCSS
+[✓] scss/sass, stylus, less, postCSS
 
 [-] Адаптивная верстка (chrome, safari)
 
