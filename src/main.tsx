@@ -1,9 +1,25 @@
+import "./index.css"
+
+import { RouterProvider, createRouter } from "@tanstack/react-router"
+
+import { Provider } from "react-redux"
 import React from "react"
 import { createRoot } from "react-dom/client"
-import { Provider } from "react-redux"
-import App from "./App"
+import { routeTree } from "./routeTree.gen"
 import { store } from "./app/store"
-import "./index.css"
+
+// Set up a Router instance
+const router = createRouter({
+  routeTree,
+  defaultPreload: "intent",
+})
+
+// Register things for typesafety
+declare module "@tanstack/react-router" {
+  interface Register {
+    router: typeof router
+  }
+}
 
 const container = document.getElementById("root")
 
@@ -13,7 +29,7 @@ if (container) {
   root.render(
     <React.StrictMode>
       <Provider store={store}>
-        <App />
+        <RouterProvider router={router} />
       </Provider>
     </React.StrictMode>,
   )
