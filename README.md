@@ -36,7 +36,7 @@ Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Test
 
 [✓] Резиновая верстка интерфейса. Максимальная ширина 1024px, минимальная 360px
 
-[-] lazy-loading для загрузки изображений
+[✓] lazy-loading для загрузки изображений
 
 ### Требования по стеку на выбор:
 
@@ -52,7 +52,7 @@ Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Test
 
 [✓] scss/sass, stylus, less, postCSS
 
-[-] Адаптивная верстка (chrome, safari)
+[✓] Адаптивная верстка (chrome, safari)
 
 [-] jest (опционально)
 

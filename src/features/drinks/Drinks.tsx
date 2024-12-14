@@ -12,7 +12,7 @@ import {
 } from "@mantine/core"
 
 import type { DrinkCodes } from "#src/constants/config"
-import styles from "./Drinks.module.css"
+import { LazyLoadImage } from "react-lazy-load-image-component"
 import { useGetDrinksQuery } from "./drinksApiSlice"
 
 export const Drinks = ({ drinkCode }: { drinkCode: DrinkCodes }) => {
@@ -67,7 +67,14 @@ export const Drinks = ({ drinkCode }: { drinkCode: DrinkCodes }) => {
                   <Text>{instructions}</Text>
                 </Stack>
                 <Space w="sm" h="sm" />
-                <Image w="50%" src={image} radius="md" loading="lazy" />
+                <Image
+                  w="50%"
+                  src={image}
+                  radius="md"
+                  loading="lazy"
+                  component={LazyLoadImage}
+                  alt={name}
+                />
               </Flex>
               <Space h="md" />
               <Text size="xl">Ingredients:</Text>
