@@ -1,18 +1,9 @@
+import type { DrinkCodes } from "#src/constants/config"
 import styles from "./Drinks.module.css"
 import { useGetDrinksQuery } from "./drinksApiSlice"
 
-enum DrinkCodes {
-  A1 = "a1",
-  Kir = "kir",
-  Margarita = "margarita",
-  Mojito = "mojito",
-}
-
-export const Drinks = () => {
-  // Using a query hook automatically fetches data and returns query values
-  const { data, isError, isLoading, isSuccess } = useGetDrinksQuery(
-    DrinkCodes.Margarita,
-  )
+export const Drinks = ({ drinkCode }: { drinkCode: DrinkCodes }) => {
+  const { data, isError, isLoading, isSuccess } = useGetDrinksQuery(drinkCode)
 
   if (isError) {
     return (
