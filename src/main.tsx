@@ -1,7 +1,8 @@
-import "./index.css"
+import "@mantine/core/styles.css"
 
 import { RouterProvider, createRouter } from "@tanstack/react-router"
 
+import { MantineProvider } from "@mantine/core"
 import { Provider } from "react-redux"
 import React from "react"
 import { createRoot } from "react-dom/client"
@@ -29,7 +30,9 @@ if (container) {
   root.render(
     <React.StrictMode>
       <Provider store={store}>
-        <RouterProvider router={router} />
+        <MantineProvider>
+          <RouterProvider router={router} />
+        </MantineProvider>
       </Provider>
     </React.StrictMode>,
   )
