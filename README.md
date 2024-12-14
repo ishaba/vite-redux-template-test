@@ -58,4 +58,4 @@ Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Test
 
 ### По окончанию:
 
-[-] выложить в репозиторий
+[✓] выложить в репозиторий
