@@ -1,11 +1,13 @@
+import { createFileRoute, redirect } from "@tanstack/react-router"
+
 import { DrinkCodes } from "#src/constants/config"
-import { Drinks } from "#src/features/drinks/Drinks"
-import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/")({
-  component: RouteComponent,
+  loader: () => {
+    redirect({
+      to: "/$drinkId",
+      params: { drinkId: DrinkCodes.A1 },
+      throw: true,
+    })
+  },
 })
-
-function RouteComponent() {
-  return <Drinks drinkCode={DrinkCodes.A1} />
-}
