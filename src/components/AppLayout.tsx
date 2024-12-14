@@ -1,11 +1,10 @@
 import { AppShell, Burger, Group, Text } from "@mantine/core"
 
-import { IconGlassCocktail } from "@tabler/icons-react"
 import { Link } from "@tanstack/react-router"
 import { Navigation } from "#src/components/Navigation"
 import { useDisclosure } from "@mantine/hooks"
 
-export function AppLayout({ children }: { children: React.ReactNode }) {
+export const AppLayout = ({ children }: { children: React.ReactNode }) => {
   const [opened, { toggle, close }] = useDisclosure()
 
   return (
@@ -24,7 +23,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
 
           <Link to="/" style={{ textDecoration: "none" }}>
             <Group>
-              <IconGlassCocktail />
+              🍹
               <Text size="xl">Drinks App</Text>
             </Group>
           </Link>

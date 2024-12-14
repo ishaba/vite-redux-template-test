@@ -2,7 +2,7 @@ import type { MantineColorScheme } from "@mantine/core"
 import { Select } from "@mantine/core"
 import { useMantineColorScheme } from "@mantine/core"
 
-export function ColorSchemeToggle() {
+export const ColorSchemeToggle = () => {
   const { colorScheme, setColorScheme } = useMantineColorScheme()
 
   return (

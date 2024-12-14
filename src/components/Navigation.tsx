@@ -2,7 +2,7 @@ import { ColorSchemeToggle } from "#src/components/ColorSchemeToggle"
 import { DrinkCodes } from "#src/constants/config"
 import { Link } from "@tanstack/react-router"
 
-export function Navigation({ close }: { close: () => void }) {
+export const Navigation = ({ close }: { close: () => void }) => {
   return (
     <>
       {Object.values(DrinkCodes).map(code => (

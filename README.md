@@ -54,7 +54,7 @@ Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Test
 
 [✓] Адаптивная верстка (chrome, safari)
 
-[-] jest (опционально)
+[✓] jest (опционально)
 
 ### По окончанию:
 

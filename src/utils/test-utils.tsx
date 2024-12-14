@@ -1,10 +1,15 @@
-import type { RenderOptions } from "@testing-library/react"
-import { render } from "@testing-library/react"
-import userEvent from "@testing-library/user-event"
+import type { AppStore, RootState } from "#src/app/store"
 import type { PropsWithChildren, ReactElement } from "react"
+import { RouterProvider, createRouter } from "@tanstack/react-router"
+
+import { MantineProvider } from "@mantine/core"
 import { Provider } from "react-redux"
-import type { AppStore, RootState } from "../app/store"
-import { makeStore } from "../app/store"
+import type { RenderOptions } from "@testing-library/react"
+import { createTheme } from "@mantine/core"
+import { makeStore } from "#src/app/store"
+import { render } from "@testing-library/react"
+import { routeTree } from "#src/routeTree.gen"
+import userEvent from "@testing-library/user-event"
 
 /**
  * This type extends the default options for
@@ -33,6 +38,15 @@ interface ExtendedRenderOptions extends Omit<RenderOptions, "queries"> {
   store?: AppStore
 }
 
+export const theme = createTheme({
+  /** Put your mantine theme override here */
+})
+
+const router = createRouter({
+  routeTree,
+  defaultPreload: "intent",
+})
+
 /**
  * Renders the given React element with Redux Provider and custom store.
  * This function is useful for testing components that are connected to the Redux store.
@@ -53,7 +67,11 @@ export const renderWithProviders = (
   } = extendedRenderOptions
 
   const Wrapper = ({ children }: PropsWithChildren) => (
-    <Provider store={store}>{children}</Provider>
+    <Provider store={store}>
+      <MantineProvider theme={theme}>
+        <RouterProvider router={router} />
+      </MantineProvider>
+    </Provider>
   )
 
   // Return an object with the store and all of RTL's query functions

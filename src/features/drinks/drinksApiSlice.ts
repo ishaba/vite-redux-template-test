@@ -46,12 +46,12 @@ interface DrinksApiResponse {
   drinks: DrinkApi[]
 }
 
-type DrinkIngredients = {
+export type DrinkIngredientsType = {
   name: string
   measure?: string
 }
 
-interface DrinkData {
+export interface DrinkData {
   id: string
   name: string
   category: string
@@ -59,7 +59,7 @@ interface DrinkData {
   glass: string
   instructions: string
   image: string
-  ingredients: DrinkIngredients[]
+  ingredients: DrinkIngredientsType[]
 }
 
 type DrinksQueryResult = DrinkData[]
