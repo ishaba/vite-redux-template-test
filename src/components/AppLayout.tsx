@@ -6,7 +6,7 @@ import { Navigation } from "#src/components/Navigation"
 import { useDisclosure } from "@mantine/hooks"
 
 export function AppLayout({ children }: { children: React.ReactNode }) {
-  const [opened, { toggle }] = useDisclosure()
+  const [opened, { toggle, close }] = useDisclosure()
 
   return (
     <AppShell
@@ -32,7 +32,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       </AppShell.Header>
 
       <AppShell.Navbar p="md">
-        <Navigation />
+        <Navigation close={close} />
       </AppShell.Navbar>
 
       <AppShell.Main>{children}</AppShell.Main>

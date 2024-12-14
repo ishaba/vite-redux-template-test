@@ -2,7 +2,7 @@ import { ColorSchemeToggle } from "#src/components/ColorSchemeToggle"
 import { DrinkCodes } from "#src/constants/config"
 import { Link } from "@tanstack/react-router"
 
-export function Navigation() {
+export function Navigation({ close }: { close: () => void }) {
   return (
     <>
       {Object.values(DrinkCodes).map(code => (
@@ -18,6 +18,7 @@ export function Navigation() {
             padding: "4px 0",
           }}
           activeOptions={{ exact: true }}
+          onClick={close}
         >
           {code}
         </Link>
