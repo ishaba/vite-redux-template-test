@@ -19,7 +19,13 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
     >
       <AppShell.Header>
         <Group h="100%" px="md">
-          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+          <Burger
+            opened={opened}
+            onClick={toggle}
+            hiddenFrom="sm"
+            size="sm"
+            aria-label="Navigation"
+          />
 
           <Link to="/" style={{ textDecoration: "none" }}>
             <Group>

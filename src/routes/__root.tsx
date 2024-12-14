@@ -13,7 +13,9 @@ function RootComponent() {
       <AppLayout>
         <Outlet />
       </AppLayout>
-      <TanStackRouterDevtools position="bottom-right" />
+      {import.meta.env.DEV && (
+        <TanStackRouterDevtools position="bottom-right" />
+      )}
     </>
   )
 }

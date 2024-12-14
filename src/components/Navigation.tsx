@@ -12,9 +12,11 @@ export const Navigation = ({ close }: { close: () => void }) => {
           key={code}
           to={`/${code}`}
           style={{
+            color: "#000",
             textDecoration: "none",
             textTransform: "capitalize",
             padding: "4px 0",
+            borderRadius: "4px",
           }}
           activeOptions={{ exact: true }}
           onClick={close}

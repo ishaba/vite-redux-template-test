@@ -10,6 +10,7 @@ export const ColorSchemeToggle = () => {
       data={["light", "dark", "auto"]}
       value={colorScheme}
       onChange={value => setColorScheme(value as MantineColorScheme)}
+      aria-label="Choose theme"
     />
   )
 }

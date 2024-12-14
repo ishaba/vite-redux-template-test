@@ -1,6 +1,7 @@
 import {
   Badge,
   Flex,
+  Group,
   Image,
   Paper,
   Space,
@@ -13,6 +14,10 @@ import { LazyLoadImage } from "react-lazy-load-image-component"
 import { type DrinkData } from "./drinksApiSlice"
 import css from "./DrinkCard.module.css"
 
+interface DrinkCardProps extends DrinkData {
+  index: number
+}
+
 export const DrinkCard = ({
   id,
   name,
@@ -22,32 +27,30 @@ export const DrinkCard = ({
   instructions,
   image,
   ingredients,
-}: DrinkData) => {
+  index,
+}: DrinkCardProps) => {
   return (
-    <Paper
-      shadow="xs"
-      p="xl"
-      key={id}
-      style={{ maxWidth: "800px", margin: "0 auto" }}
-    >
+    <Paper shadow="xs" p="xl" key={id} className={css.root}>
       <Flex direction={{ base: "column-reverse", md: "row" }}>
         <Stack className={css.content}>
           <Title>{name}</Title>
-          <Stack>
-            <Badge color="pink">{category}</Badge>
-            <Badge color="teal">{alcoholic}</Badge>
-            <Badge color="yellow">{glass}</Badge>
-          </Stack>
+          <Group>
+            <Badge color="#a61e4d">{category}</Badge>
+            <Badge color="#862e9c">{alcoholic}</Badge>
+            <Badge color="#1864ab">{glass}</Badge>
+          </Group>
           <Text>{instructions}</Text>
         </Stack>
         <Space w="sm" h="sm" />
         <div className={css.image}>
           <Image
             w="100%"
+            width="290"
+            height="290"
             src={image}
             radius="md"
-            loading="lazy"
-            component={LazyLoadImage}
+            loading={index === 0 ? "eager" : "lazy"}
+            component={LazyLoadImage as React.FunctionComponent<any>}
             alt={name}
           />
         </div>

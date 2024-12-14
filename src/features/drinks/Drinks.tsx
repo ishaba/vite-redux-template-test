@@ -28,8 +28,8 @@ export const Drinks = ({ drinkCode }: { drinkCode: DrinkCodes }) => {
   if (isSuccess) {
     return (
       <Stack>
-        {data.map(drink => (
-          <DrinkCard key={drink.id} {...drink} />
+        {data.map((drink, index) => (
+          <DrinkCard key={drink.id} {...drink} index={index} />
         ))}
       </Stack>
     )

@@ -4,7 +4,7 @@ import css from "./DrinkCard.module.css"
 
 export const DrinkCardSkeleton = () => {
   return (
-    <Paper shadow="xs" p="xl" style={{ width: "800px", margin: "0 auto" }}>
+    <Paper shadow="xs" p="xl" style={{ margin: "0 auto" }}>
       <Flex direction={{ base: "column-reverse", md: "row" }}>
         <Stack className={css.content}>
           <Skeleton height={42} w={100} />
@@ -22,7 +22,12 @@ export const DrinkCardSkeleton = () => {
         </Stack>
         <Space w="sm" h="sm" />
         <div className={css.image}>
-          <Skeleton w="100%" radius="md" style={{ aspectRatio: "1/1" }} />
+          <Skeleton
+            w="100%"
+            h="290"
+            radius="md"
+            style={{ aspectRatio: "1/1" }}
+          />
         </div>
       </Flex>
     </Paper>
