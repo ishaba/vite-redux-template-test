@@ -7,7 +7,7 @@
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": { "project": true, "tsconfigRootDir": "./" },
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "eslint-plugin-perfectionist"],
   "root": true,
   "ignorePatterns": ["dist", "vite.config.ts"],
   "rules": {
