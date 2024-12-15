@@ -1,11 +1,10 @@
 import "@mantine/core/styles.css"
 
 import { RouterProvider, createRouter } from "@tanstack/react-router"
+import { h, render } from "preact"
 
 import { MantineProvider } from "@mantine/core"
 import { Provider } from "react-redux"
-import React from "react"
-import { createRoot } from "react-dom/client"
 import { routeTree } from "./routeTree.gen"
 import { store } from "./app/store"
 
@@ -25,16 +24,13 @@ declare module "@tanstack/react-router" {
 const container = document.getElementById("root")
 
 if (container) {
-  const root = createRoot(container)
-
-  root.render(
-    <React.StrictMode>
-      <Provider store={store}>
-        <MantineProvider>
-          <RouterProvider router={router} />
-        </MantineProvider>
-      </Provider>
-    </React.StrictMode>,
+  render(
+    <Provider store={store}>
+      <MantineProvider>
+        <RouterProvider router={router} />
+      </MantineProvider>
+    </Provider>,
+    container,
   )
 } else {
   throw new Error(
