@@ -12,15 +12,15 @@ export default defineConfig({
     pluginPurgeCss({
       variables: true,
     }),
-    PluginCritical({
-      criticalUrl: "https://vite-redux-template-test.vercel.app/",
-      criticalBase: "./",
-      criticalPages: [{ uri: "", template: "index" }],
-      criticalConfig: {
-        base: "dist/",
-        inline: true,
-      },
-    }),
+    // PluginCritical({
+    //   criticalUrl: "https://vite-redux-template-test.vercel.app/",
+    //   criticalBase: "./",
+    //   criticalPages: [{ uri: "", template: "index" }],
+    //   criticalConfig: {
+    //     base: "dist/",
+    //     inline: true,
+    //   },
+    // }),
   ],
   server: {
     open: true,
